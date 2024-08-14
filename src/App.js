@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './Component/Login/Login';
+import Signup from './Component/Sign up/Signup';
+import Chat from './Component/Chat/Chat';
+import StickyNavbar from "./Component/NavBar/StickyNavbar";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
+    useEffect(() => {
+        document.body.className = isDarkMode ? 'dark-mode' : 'light-mode';
+    }, [isDarkMode]);
+
+    const toggleTheme = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
+    return (
+        <Router>
+            <StickyNavbar onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+            <div className="container mt-4">
+                <Routes>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/chat" element={<Chat />} />
+                    <Route path="/" element={<Login />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+}
 export default App;

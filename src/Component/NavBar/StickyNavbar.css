@@ -1,0 +1,62 @@
+.basic-navbar-nav{
+    display: flex !important;
+    flex-basis: auto;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar-dark {
+    background-color: #343a40;
+}
+
+.navbar-light {
+    background-color: #f8f9fa;
+}
+
+.btn.dark-mood {
+    width: 10%;
+    border-radius: 25px;
+    margin-top: 1rem;
+    margin-right: 10px;
+
+}
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark-mood {
+    margin-left: auto;
+}
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
